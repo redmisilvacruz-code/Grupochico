@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chico Projects - Era dos Chicos 👑</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">CHICO</span>
+                <span class="logo-subtext">PROJECTS</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#about" class="nav-link">About</a>
+                <button class="settings-btn" onclick="toggleSettings()">⚙️</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+            <h2>⚙️ Configurações</h2>
+            <button class="close-btn" onclick="toggleSettings()">✖</button>
+        </div>
+        
+        <div class="settings-content">
+            <!-- RGB Toggle -->
+            <div class="setting-item">
+                <label for="rgbToggle">
+                    <span>🌈 Efeitos RGB</span>
+                    <input type="checkbox" id="rgbToggle" class="toggle" checked onchange="toggleRGB()">
+                </label>
+            </div>
+
+            <!-- Theme Selector -->
+            <div class="setting-item">
+                <span>🎨 Tema</span>
+                <div class="theme-selector">
+                    <button class="theme-btn active" data-theme="dark" onclick="changeTheme('dark')">
+                        <div class="theme-preview dark-theme"></div>
+                        Dark
+                    </button>
+                    <button class="theme-btn" data-theme="blue" onclick="changeTheme('blue')">
+                        <div class="theme-preview blue-theme"></div>
+                        Blue
+                    </button>
+                    <button class="theme-btn" data-theme="purple" onclick="changeTheme('purple')">
+                        <div class="theme-preview purple-theme"></div>
+                        Purple
+                    </button>
+                    <button class="theme-btn" data-theme="green" onclick="changeTheme('green')">
+                        <div class="theme-preview green-theme"></div>
+                        Green
+                    </button>
+                </div>
+            </div>
+
+            <!-- Accent Color -->
+            <div class="setting-item">
+                <span>🎯 Cor de Destaque</span>
+                <input type="color" id="accentColor" value="#00d4ff" onchange="changeAccent(this.value)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">ERA DOS CHICOS</span>
+                </h1>
+                <p class="hero-subtitle">Desenvolvendo projetos insanos desde 2026 🔥</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                    <a href="#about" class="btn btn-secondary">Sobre Nós</a>
+                </div>
+            </div>
+            <div class="hero-decoration">
+                <div class="floating-card">👑</div>
+                <div class="floating-card">💻</div>
+                <div class="floating-card">🔥</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">Nossos Projetos</span>
+            </h2>
+
+            <div class="projects-grid">
+                
+                <!-- Chico HUB Roblox -->
+                <div class="project-card">
+                    <div class="project-icon">🎮</div>
+                    <div class="project-header">
+                        <h3>Chico HUB Roblox</h3>
+                        <span class="project-status in-progress">Em Desenvolvimento</span>
+                    </div>
+                    <p class="project-description">
+                        HUB de scripts premium para Roblox com interface moderna e funcionalidades exclusivas.
+                    </p>
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>Progresso</span>
+                            <span class="progress-percent">70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Roblox</span>
+                        <span class="tag">Lua</span>
+                        <span class="tag">Scripts</span>
+                    </div>
+                </div>
+
+                <!-- Chico Client -->
+                <div class="project-card">
+                    <div class="project-icon">⛏️</div>
+                    <div class="project-header">
+                        <h3>Chico Client</h3>
+                        <span class="project-status complete">Completo</span>
+                    </div>
+                    <p class="project-description">
+                        Cliente de hack para Minecraft Java 1.21+ com recursos avançados e interface customizável.
+                    </p>
+                    <div class="project-features">
+                        <div class="feature">✓ Flight</div>
+                        <div class="feature">✓ KillAura</div>
+                        <div class="feature">✓ ESP</div>
+                        <div class="feature">✓ 50+ Módulos</div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Minecraft</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">Fabric</span>
+                    </div>
+                </div>
+
+                <!-- Chico RROS -->
+                <div class="project-card">
+                    <div class="project-icon">💀</div>
+                    <div class="project-header">
+                        <h3>Chico RROS</h3>
+                        <span class="project-status patched">PATCHED</span>
+                    </div>
+                    <p class="project-description">
+                        Executor avançado para Roblox. Descontinuado devido ao anti-cheat Byfron/Hyperion.
+                    </p>
+                    <div class="project-info">
+                        <div class="info-item">
+                            <span class="info-label">Status:</span>
+                            <span class="info-value red">Não Funciona</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Motivo:</span>
+                            <span class="info-value">Anti-Cheat</span>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag tag-dead">Descontinuado</span>
+                        <span class="tag">Roblox</span>
+                    </div>
+                </div>
+
+                <!-- ChicoRoulette -->
+                <div class="project-card">
+                    <div class="project-icon">🎲</div>
+                    <div class="project-header">
+                        <h3>ChicoRoulette</h3>
+                        <span class="project-status complete">Completo</span>
+                    </div>
+                    <p class="project-description">
+                        Plugin para servidores Minecraft com eventos aleatórios e sistema de roleta animado.
+                    </p>
+                    <div class="project-features">
+                        <div class="feature">🌙 Lua de Sangue</div>
+                        <div class="feature">💎 Chuva de Diamantes</div>
+                        <div class="feature">💀 Morte Aleatória</div>
+                        <div class="feature">+ 5 eventos</div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Paper/Spigot</span>
+                        <span class="tag">Plugin</span>
+                        <span class="tag">Java</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">Sobre Nós</span>
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>👑 Era dos Chicos</h3>
+                    <p>
+                        Somos desenvolvedores apaixonados por criar projetos únicos e inovadores.
+                        Do Minecraft ao Roblox, nossa missão é desenvolver ferramentas que elevam
+                        a experiência de jogo a outro nível.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Projetos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Ativos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2026</div>
+                            <div class="stat-label">Fundação</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="code-box">
+                        <div class="code-header">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <div class="code-content">
+                            <code>
+                                <span class="keyword">class</span> <span class="class-name">ChicoProjects</span> {<br>
+                                &nbsp;&nbsp;<span class="keyword">public static void</span> <span class="function">main</span>() {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Era dos Chicos! 🔥"</span>);<br>
+                                &nbsp;&nbsp;}<br>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Chico Projects - Era dos Chicos 👑</p>
+            <p>Desenvolvido por Lorenzo, CorlesDaChico & Gustavoxrz</p>
+        </div>
+    </footer>
+
+    <!-- RGB Background Effect -->
+    <div class="rgb-background" id="rgbBackground"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
